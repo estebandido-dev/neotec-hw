@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<!--
+   Copyright © 2020 Ricardo García Jiménez, Juan José Ramírez López,
+                    Esteban López Elizarraraz
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/Login.css">
+    <link rel="icon" type="image/jpg" href="Images/LogoNeoTec.png">
+    <script src="https://kit.fontawesome.com/3cf8b15ac1.js" crossorigin="anonymous"></script>
+    <title>Inicia sesión</title>
+</head>
+<body>
+    <div class="overlay">
+        <form method="post" action="./controllers/loginController.php">
+           <!--   con = Container  para los items del form-->
+           <div class="con">
+           <!--     inicio del contenido en el headre del LOGIN  -->
+           <header class="head-form">
+             <a href="index.html"> <h2>NeoTec</h2> </a>
+              <p>Inicia sesión usando tu correo/usuario y contraseña</p>
+           </header>
+           <div class="field-set">
+              <!--   correo -->
+              <div class="mail">
+               <span class="input-item">
+                  <i class="fa fa-user-circle"></i>
+                </span>
+               <!--   introducir correo-->
+                <input name="login-user" class="form-input" id="txt-input" type="text" placeholder="e-mail/usuario" required>
+              </div>
+               
+             <div class="password">
+               <span class="input-item">
+                  <i class="fa fa-key"></i>
+                 </span>
+
+                <!--   Password Input-->
+                <input name="login-password" class="form-input" id="txt-input" type="password" placeholder="contraseña" required>
+               
+             </div>
+              
+        <!--Sección de botones -->
+        <!--botón de login-->
+              <input type="submit" class="log-in" value="Iniciar Sesión">
+           </div>
+          
+        <!--  Botones extra al login -->
+           <div class="other">
+        <!--  Olvidaste tu contraseña-->
+              <button class="btn submits frgt-pass">¿Olvidaste tu contraseña?</button>
+        <!--Registrarse -->
+              <button class="btn submits sign-up" onclick="location.href='registro.html'" >Registrate
+        <!--Sign Up font icon -->
+              <i class="fa fa-user-plus" aria-hidden="true"></i>
+              </button>
+           </div>
+             
+        <!--   Fin del container  -->
+          </div>
+          
+          <!-- fin del form -->
+        </form>
+        </div>
+</body>
+</html>

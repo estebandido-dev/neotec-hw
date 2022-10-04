@@ -1,0 +1,726 @@
+/*
+   Copyright © 2020 Ricardo García Jiménez, Juan José Ramírez López,
+                    Esteban López Elizarraraz
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+
+:root{
+    --colortextos: #49454567;
+    --maincolor: #e74c3c;
+
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 90px;
+    background-color: #17103a;
+    position: relative;
+}
+
+.logo{
+    width: 65px;
+    height: 65px;
+    margin-right: 10px;
+    margin-left: 1em;
+    
+}
+
+nav{
+    padding: 10px 50px 0 0;
+    align-items: center;
+    display: flex;
+    align-items: center;
+
+}
+
+nav > a{
+    color: white;
+    font-weight: 500;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 300ms all ease-in;
+}
+
+nav > a:hover{
+    color: #8eafec;
+    text-decoration: underline;
+}
+
+.product-grid{
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.product-grid .product-imagen{
+    overflow: hidden;
+    position: relative;
+    width: 265px;
+    height: 250px;
+}
+
+
+/*------------------------------------------- Producto*/
+.product-gridx{
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.product-gridx .product-imagenx{
+    overflow: hidden;
+    position: relative;
+    width: 600px;
+    height: 650px;
+    float: left;
+}
+
+.product-gridx .product-imagenx:before{
+    content: "";
+    background: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.4s ease-out 0s;
+    border-radius: 8px;
+}
+
+.product-gridx .product-imagenx:before{
+    content: "";
+    background: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.4s ease-out 0s;
+    border-radius: 8px;
+}
+
+.product-gridx:hover .product-imagenx:before{ 
+    opacity: 1; 
+}
+
+.product-gridx .product-imagenx a{
+    display: block;
+}
+
+.product-gridx .product-imagenx img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-imagenx .foto1{
+    opacity: 1;
+    backface-visibility: hidden;
+    transition: all 0.4s ease-out 0s;
+}
+
+.product-gridx:hover .product-imagenx .foto1{ 
+    opacity: 0; 
+}
+
+.product-imagenx .foto2{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: scale(3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease-out 0s;
+}
+
+.product-gridx:hover .product-imagenx .foto2 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.product-imagenx .etiqueta-disponible,
+.product-imagenx .producto-descuento{
+    content: "";
+    color: #fff;
+    background-color: #2ecc71;
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 7px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+}
+
+.product-imagenx .producto-descuento{
+    background-color: var(--maincolor);
+    left: auto;
+    right: 12px;
+}
+
+.product-gridx .social {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: 4;
+}
+
+.product-gridx .social li {
+    margin: 0 0 12px;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: transform .3s ease-out 0s;
+}
+
+.product-gridx:hover .social li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.product-gridx:hover .social li:nth-child(2){ 
+    transition-delay: 0.1s; 
+}
+.product-gridx:hover .social li:nth-child(3){ 
+    transition-delay: 0.2s; 
+}
+.product-gridx:hover .social li:nth-child(4){ 
+    transition-delay: 0.3s; 
+}
+
+.product-gridx .social li a {
+    color: #fff;
+    font-size: 22px;
+    transition: all 0.3s;
+}
+
+.product-gridx .social li a:hover{
+    color: var(--maincolor);
+}
+
+.product-gridx .social li a::before,
+.product-gridx .social li a::after{
+    content: attr(data-tip);
+    color: #000;
+    background: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    display: none;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 33px;
+    top: 50%;
+    transition: all 0.3s;
+}
+.product-gridx .social li a:after{
+    content: '';
+    background: linear-gradient(-45deg, #fff 49%, transparent 50%);
+    width: 10px;
+    height: 10px;
+    top: 40%;
+    left: 20px;
+}
+.product-gridx .social li a:hover:before,
+.product-gridx .social li a:hover:after{
+      display: block;
+}
+.product-gridx .contenido-producto{
+    padding: 12px 0;
+}
+.product-gridx .titulo{
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0 0 5px;
+    text-align: right;
+}
+.product-gridx .titulo a{
+    color: #959595;
+}
+.product-gridx .titulo a:hover{
+    color: var(--maincolor);
+}
+.precio{
+    color: #2193b0;
+    font-size: 28px;
+    font-weight: 400;
+}
+.product-gridx .precio span{
+    color: #333;
+    text-decoration: line-through;
+    margin-right: 3px;
+}
+.product-gridx .precio.descuento{
+    color: var(--maincolor);
+}
+.contenido-producto{
+    float: right;
+}
+#derecha{
+    width: 490px;
+    height: auto;
+    float: right;
+}
+.caracteristicas h3{
+    border: 1px;
+    margin-top: 20px;
+    margin: 20px;
+    font-size: 30px;
+    font-family: 'Squada One', cursive;
+    color: orangered;
+}
+/*.caracteristicas h2{
+    border: 1px;
+    margin-top: 20px;
+    margin: 30px;
+    font-size: 30px;
+    font-family: 'Squada One', cursive;
+    color: #2193b0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+}*/
+.caracteristicas .carac{
+    margin-top: 20px;
+    margin: 20px;
+    font-size: 18px;
+}
+.headingx
+{
+   display: flex;
+   justify-content: center;
+   border: 100px solid linear-gradient(to bottom, #2193b0, #6dd5ed);
+}
+
+.headingx h1{
+    background-color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+    padding: 2px 10px;
+    color: rgb(255, 94, 0);
+    margin-top: 20px;
+    margin: 20px;
+    font-size: 30px;
+    font-family: 'Squada One', cursive;
+
+}
+.oferta span{
+    color: #333;
+    text-decoration: line-through;
+    margin-right: 3px; 
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.oferta{
+    color: #2193b0;
+    font-size: 28px;
+    font-weight: 400;
+}
+/*<<<<<<<<<<<BOTON>>>>>>>>>>>>>>>>>>>>*/
+.myButton {
+	box-shadow:inset 0px 0px 0px 0px #f5978e;
+	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+	background-color:#f24537;
+	border-radius:38px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 45px;
+	text-decoration:none;
+    text-shadow:0px 2px 0px #810e05;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+	background-color:#c62d1f;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+/*<<<<<<<<<<<FINBOTON>>>>>>>>>>>>>>>>>>>>*/
+/*-----------------------------------------------Fin Producto*/
+.product-grid .product-imagen:before{
+    content: "";
+    background: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.4s ease-out 0s;
+    border-radius: 8px;
+}
+
+.product-grid:hover .product-imagen:before{ 
+    opacity: 1; 
+}
+
+.product-grid .product-imagen a{
+    display: block;
+}
+
+.product-grid .product-imagen img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-imagen .foto1{
+    opacity: 1;
+    backface-visibility: hidden;
+    transition: all 0.4s ease-out 0s;
+}
+
+.product-grid:hover .product-imagen .foto1{ 
+    opacity: 0; 
+}
+
+.product-imagen .foto2{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: scale(3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease-out 0s;
+}
+
+.product-grid:hover .product-imagen .foto2 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.product-imagen .etiqueta-disponible,
+.product-imagen .producto-descuento{
+    content: "";
+    color: #fff;
+    background-color: #2ecc71;
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 7px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+}
+
+.product-imagen .producto-descuento{
+    background-color: var(--maincolor);
+    left: auto;
+    right: 12px;
+}
+
+.product-grid .social {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: 4;
+}
+
+.product-grid .social li {
+    margin: 0 0 12px;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: transform .3s ease-out 0s;
+}
+
+.product-grid:hover .social li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.product-grid:hover .social li:nth-child(2){ 
+    transition-delay: 0.1s; 
+}
+.product-grid:hover .social li:nth-child(3){ 
+    transition-delay: 0.2s; 
+}
+.product-grid:hover .social li:nth-child(4){ 
+    transition-delay: 0.3s; 
+}
+
+.product-grid .social li a {
+    color: #fff;
+    font-size: 22px;
+    transition: all 0.3s;
+}
+
+.product-grid .social li a:hover{
+    color: var(--maincolor);
+}
+
+.product-grid .social li a::before,
+.product-grid .social li a::after{
+    content: attr(data-tip);
+    color: #000;
+    background: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    display: none;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 33px;
+    top: 50%;
+    transition: all 0.3s;
+}
+
+.product-grid .social li a:after{
+    content: '';
+    background: linear-gradient(-45deg, #fff 49%, transparent 50%);
+    width: 10px;
+    height: 10px;
+    top: 40%;
+    left: 20px;
+}
+
+.product-grid .social li a:hover:before,
+.product-grid .social li a:hover:after{
+      display: block;
+}
+
+.product-grid .contenido-producto{
+    padding: 12px 0;
+}
+
+.product-grid .titulo{
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0 0 5px;
+}
+
+.product-grid .titulo a{
+    color: #959595;
+}
+
+.product-grid .titulo a:hover{
+    color: var(--maincolor);
+}
+
+.product-grid .precio{
+    color: #2193b0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.product-grid .precio span{
+    color: #333;
+    text-decoration: line-through;
+    margin-right: 3px;
+}
+
+.product-grid .precio.descuento{
+    color: var(--maincolor);
+}
+
+.heading
+{
+   display: flex;
+   justify-content: center;
+   border: 100px solid linear-gradient(to bottom, #2193b0, #6dd5ed);
+}
+
+.container{
+    margin-bottom: 20px;
+}
+
+.heading h1{
+    background-color: black;
+    text-shadow: 2px 2px 12px rgba(69,66,66,0.3);
+    padding: 2px 10px;
+    color: #fff;
+    margin-top: 20px;
+    margin: 20px;
+    font-size: 30px;
+    font-family: 'Squada One', cursive;
+
+}
+/* -----------------------ESTILOS PARA EL FOOTER----------------- */
+
+footer{
+    background: #17103a;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content-foo{
+    text-align: center;
+}
+
+.content-foo h4{
+    color: #fff;
+    border-bottom: 3px solid #8eafec;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p{
+    color: #ccc;
+}
+
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #9e9797;
+}
+
+form {
+    width: 500px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0%;
+    flex-direction: column;
+}
+
+.log-in {
+    display: flex;
+    color: black;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+  
+    width: 140px;
+    height: 40px;
+  
+    padding: 0 20px;
+    background: #8eafec;
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 7em;
+}
+
+.form-input{
+    width: 300px;
+    height: 50px;
+    margin-bottom: .5em;
+    padding: 15px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color:black;
+  
+    border-radius: 5px;
+    transition: 0.2s linear;
+    
+}
+
+label{
+    width: 6em;
+}
+
+@media only screen and (max-width:990px){
+    .product-grid{ margin-bottom: 30px; }
+}
+
+@media only screen and (max-width:550px){
+    .header{
+        flex-direction: column;
+    }
+
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+    
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .content-foo h4{
+        border: none;
+    }
+    
+    .content-foo p{
+        color: #ccc;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+    
+    .titulo-final{
+        font-size: 20px;
+    }
+    
+    .form-input{
+        width: 14em;
+    }
+    
+    .form-textarea{
+        width: 14em;
+    }
+}
